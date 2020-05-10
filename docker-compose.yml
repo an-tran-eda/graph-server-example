@@ -1,0 +1,33 @@
+version: '3.5'
+services:
+  database:
+    container_name: "patreon_db"
+    image: "mongo"
+    ports:
+      - "27017:27017"  # host_port:container_port
+    volumes:
+      - type: volume
+        source: db
+        target: /data/db
+    networks:
+      - patreon
+  graphql:
+    container_name: "patreon_graphql"
+    build: .
+    ports:
+      - "4000:4000"
+    env_file: .env
+    depends_on:
+      - database
+    links:
+      - database
+    networks:
+      - patreon
+
+networks:
+  patreon:
+    name: patreon
+    driver: bridge
+
+volumes:
+  db:

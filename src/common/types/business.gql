@@ -1,0 +1,22 @@
+"Business Schema"
+type Business {
+  id: ID
+  abn: String
+  address: String
+  name: String
+  phone: String
+  type: BusinessType
+  status: BusinessStatus
+  primaryContact: User
+  users: [User]
+}
+
+enum BusinessType {
+  SUPPLIER
+  CLIENT
+}
+
+enum BusinessStatus {
+  ACTIVE
+  INACTIVE
+}

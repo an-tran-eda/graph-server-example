@@ -1,0 +1,8 @@
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+
+# yarn error log
+yarn-error.log

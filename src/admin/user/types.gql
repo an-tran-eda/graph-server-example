@@ -1,0 +1,25 @@
+extend type Query {
+  getUsers(s: String): [User!]
+  getUser(id: ID): User!
+  adminGetUsers(limit: Int, page: Int, search: String, sort: UserSortInput): UsersResult
+}
+
+extend type Mutation {
+  login(email: String, password: String): AccessToken!
+  createUser(
+    email: String!
+    firstname: String!
+    lastname: String!
+    roles: [String!]
+    status: String
+  ): User!
+  deleteUser(id: String!): User!
+  updateUser(
+    id: ID!
+    email: String
+    lastname: String
+    firstname: String
+    roles: [String]
+    status: UserStatus
+  ): User!
+}

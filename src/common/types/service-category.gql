@@ -1,0 +1,14 @@
+"ServiceCategory Schema"
+type ServiceCategory {
+  id: ID
+  active: Boolean
+  name: String
+}
+
+type ServiceCategoryResult {
+  categories: [ServiceCategory]
+  totalCount: Int
+  totalPage: Int
+  page: Int
+  filter: String
+}

@@ -1,0 +1,27 @@
+extend type Query {
+  adminGetSupplier(id: ID): Business
+  adminGetSuppliers: [Business]
+}
+
+extend type Mutation {
+  adminCreateSupplier(
+    name: String!
+    abn: String!
+    address: String
+    phone: String
+    email: String
+    contactPerson: String
+    status: BusinessStatus
+  ): Business
+
+  adminUpdateSupplier(
+    id: ID!
+    name: String!
+    abn: String!
+    address: String
+    phone: String
+    email: String
+    contactPerson: String
+    status: BusinessStatus
+  ): Business
+}

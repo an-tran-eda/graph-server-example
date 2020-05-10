@@ -1,0 +1,14 @@
+extend type Query {
+  getServiceCategory(id: ID!): ServiceCategory
+  getServiceCategories(
+    limit: Int
+    page: Int
+    filter: String
+  ): ServiceCategoryResult
+}
+
+extend type Mutation {
+  createServiceCategory(name: String!, active: Boolean!): ServiceCategory
+  deleteServiceCategory(id: ID!): ServiceCategory
+  updateServiceCategory(id: ID!, name: String, active: Boolean): ServiceCategory
+}

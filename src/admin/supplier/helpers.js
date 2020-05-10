@@ -1,0 +1,37 @@
+const validate = require('validate.js');
+
+async function validateSupplierForm(data) {
+  validate.Promise = global.Promise;
+
+  let errors;
+  const rules = {
+    name: {
+      presence: { allowEmpty: false },
+    },
+    abn: {
+      presence: { allowEmpty: false },
+    },
+    email: {
+      presence: true,
+    },
+    phone: {
+      presence: true,
+    },
+    address: {
+      presence: true,
+    },
+    status: {
+      presence: { allowEmpty: false },
+    },
+  };
+  try {
+    await validate.async(data, rules, { format: 'grouped' });
+  } catch (err) {
+    errors = err;
+  }
+  return errors;
+}
+
+module.exports = {
+  validateSupplierForm,
+};

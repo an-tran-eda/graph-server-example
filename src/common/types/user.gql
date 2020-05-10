@@ -1,0 +1,46 @@
+"User schema"
+type User {
+  id: ID
+  email: String
+  fullname: String
+  lastname: String
+  firstname: String
+  password: String
+  roles: [String]
+  phone: String
+  business: Business
+  status: UserStatus
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum UserRole {
+  ADMIN
+  SUPPLIER
+  EMPLOYEE
+  CLIENT
+  GREMLIN
+}
+
+enum UserSortFieldEnum {
+  FIRSTNAME
+  LASTNAME
+  ROLE
+  STATUS
+}
+
+input UserSortInput {
+  field: UserSortFieldEnum!
+  direction: SortDirectionEnum!
+}
+
+type UsersResult {
+  users: [User!]
+  totalCount: Int
+  totalPage: Int
+  page: Int
+  search: String
+}

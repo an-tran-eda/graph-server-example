@@ -1,0 +1,19 @@
+extend type Query {
+  adminGetService(id: ID): Service
+  adminGetServices: [Service]
+}
+
+extend type Mutation {
+  adminCreateService(
+    name: String!
+    description: String
+    supplierId: String!
+  ): Service
+
+  adminUpdateService(
+    id: ID!
+    name: String!
+    description: String
+    supplierId: String
+  ): Service
+}

@@ -1,0 +1,7 @@
+"Service Schema"
+type Service {
+  id: ID
+  name: String
+  description: String
+  supplier: Business
+}

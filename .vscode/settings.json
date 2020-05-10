@@ -1,0 +1,7 @@
+{
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": true,
+    "files.trimTrailingWhitespace": true,
+    "eslint.autoFixOnSave": true
+  }
